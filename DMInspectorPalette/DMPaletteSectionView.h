@@ -25,6 +25,7 @@ enum  {
 @property (nonatomic,assign)    NSUInteger          index;          // Current element index (assign it then use layoutSubviews to rearrange all the other items)
 @property (weak)                DMPaletteContainer* container;      // Related section's container
 @property (readonly)            NSView*             contentView;    // Section content view
+@property (assign)              NSInteger           identifier;    // Section content view
 
     // Initialize method
 - (id)initWithContentView:(NSView *) contentView andTitle:(NSString *) headerTitle;

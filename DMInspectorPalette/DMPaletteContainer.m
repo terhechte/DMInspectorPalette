@@ -104,6 +104,14 @@
     }
 }
 
+- (DMPaletteSectionView*) sectionViewWithIdentifier:(NSInteger)identifier {
+    for (DMPaletteSectionView *v in self.sectionViews) {
+        if (v.identifier == identifier)
+            return v;
+    }
+    return nil;
+}
+
 - (void)layout
 {
     // do not update frames of subviews here or else this messes up layout widths using auto layout

@@ -22,6 +22,7 @@
 
 @implementation DMPaletteSectionView
 
+@synthesize identifier;
 @synthesize state,index;
 @synthesize title;
 @synthesize container,contentView;
@@ -94,7 +95,7 @@
     [super drawRect:dirtyRect];
     
         // Transparent background
-    [[NSColor clearColor] set];
+    [[NSColor controlColor] set];
     NSRectFillUsingOperation(dirtyRect, NSCompositeCopy);
     
     NSRect gradientFrame = NSMakeRect(0, 0, dirtyRect.size.width, kDMPaletteSectionHeaderHeight);

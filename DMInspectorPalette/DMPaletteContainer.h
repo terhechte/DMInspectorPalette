@@ -34,7 +34,10 @@
 // Toggle the state of a section view (if useAnimations = YES it will be animated)
 - (DMPaletteState) toggleStateFor:(DMPaletteSectionView *) sectionView;
 
+- (DMPaletteSectionView*) sectionViewWithIdentifier:(NSInteger)identifier;
+
 #pragma mark - Other Utils
+- (CGRect) boundsForContent;
 
 // Relayout items
 - (void) layoutSubviewsAnimated:(BOOL)animated;
