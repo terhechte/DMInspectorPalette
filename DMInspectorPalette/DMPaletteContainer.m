@@ -139,7 +139,12 @@
 		}
 		else
 		{
-			frame.size.height = kDMPaletteSectionHeaderHeight + NSHeight(paletteSection.contentView.frame);
+            
+            if (contentSectionViews.lastObject == paletteSection && paletteSection.resizeHeight)
+                frame.size.height = NSHeight(self.frame) - frame.origin.y;
+            else
+                frame.size.height = kDMPaletteSectionHeaderHeight + NSHeight(paletteSection.contentView.frame);
+            
 		}
 		
 		if (idx == index)
@@ -188,6 +193,9 @@
 		 {
 			 paletteSection.frame = [self frameForSectionAtIndex:idx];
 		 }
+        if (paletteSection.resizeHeight) {
+            [paletteSection.contentView setFrame:updateRectHeight(paletteSection.contentView.frame, NSHeight(paletteSection.frame) - kDMPaletteSectionHeaderHeight)];
+        }
     }];
 	
 	if (animated)
